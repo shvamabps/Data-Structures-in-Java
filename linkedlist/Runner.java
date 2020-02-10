@@ -10,6 +10,7 @@ public class Runner {
         list.insertAt(2, 55);
         list.insertAt(0, 36);
 
+        list.deleteAt(5);
         list.show();
     }
 }
