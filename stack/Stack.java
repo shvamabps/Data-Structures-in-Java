@@ -8,15 +8,28 @@ public class Stack {
     int top = 0;
 
     public void push(int data) {
-        stack[top] = data;
-        top++;
+        if (top == 5) {
+            System.out.println("Stack is full");
+        } else {
+            stack[top] = data;
+            top++;
+            System.out.println("Elements in the stack are : ");
+
+        }
+
     }
 
     public int pop() {
-        int data;
-        top--;
-        data = stack[top];
-        stack[top] = 0;
+
+        int data = 0;
+        if (isEmpty()) {
+            System.out.println("Stack is Empty.");
+        } else {
+            top--;
+            data = stack[top];
+            stack[top] = 0;
+            System.out.println("Element popped is : " + data);
+        }
         return data;
     }
 
@@ -26,10 +39,21 @@ public class Stack {
         return data;
     }
 
+    public int size() {
+
+        System.out.println("Size is: " + top);
+        return top;
+    }
+
+    public boolean isEmpty() {
+        return top <= 0;
+    }
+
     public void show() {
         for (int n : stack) {
             System.out.print(n + " ");
         }
+        System.out.println();
     }
 
 }
