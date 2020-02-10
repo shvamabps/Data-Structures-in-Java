@@ -6,7 +6,7 @@ package stack;
 public class Runner {
 
     public static void main(String[] args) {
-        Stack nums = new Stack();
+        dynamicStack nums = new dynamicStack();
         nums.push(15);
         nums.show();
         nums.push(8);
@@ -15,12 +15,8 @@ public class Runner {
         nums.show();
         nums.push(4);
         nums.show();
+        nums.push(5);
+        nums.show();
 
-        nums.pop();
-        nums.pop();
-        nums.pop();
-        nums.pop();
-        nums.size();
-        nums.pop();
     }
 }
