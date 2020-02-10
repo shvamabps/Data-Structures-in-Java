@@ -36,9 +36,18 @@ public class dynamicStack {
             data = stack[top];
             stack[top] = 0;
             shrink();
-            System.out.println("Element popped is : " + data);
+            // System.out.println("Element popped is : " + data);
         }
         return data;
+    }
+
+    private void shrink() {
+        int length = size();
+        if (length <= (capacity / 2) / 2)
+            capacity = capacity / 2;
+        int newStack[] = new int[capacity];
+        System.arraycopy(stack, 0, newStack, 0, length);
+        stack = newStack;
     }
 
     public int peek() {
